@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Spot Light Template</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <!--
+    Template 2051 Spot Light
+    http://www.tooplate.com/view/2051-spot-light
+    -->
+    <link href="css/tooplate_style.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="css/galleriffic-2.css" type="text/css" />
+
+    <script type="text/javascript" src="js/jquery-1.3.2.js"></script>
+    <script type="text/javascript" src="js/jquery.galleriffic.js"></script>
+
+    <script type="text/javascript" src="js/jquery.opacityrollover.js"></script>
+    <!-- We only want the thunbnails to display when javascript is disabled -->
+    <script type="text/javascript">
+        document.write('<style>.noscript { display: none; }</style>');
+    </script>
+
+    <style>
+        div.tooltip {
+            position: absolute;
+            text-align: left;
+            padding: 5px 7px;
+            background: honeydew;
+            font: 12px sans-serif;
+            font-weight: bold;
+            border-radius: 3px;
+            pointer-events: none;
+            /* keep the mouseover when over the tooltip */
+            max-width: 150px;
+        }
+
+        div.tooltip p {
+            word-break: break-all;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        circle.hide {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .ticks {
+            font: 10px sans-serif;
+        }
+
+        .track,
+        .track-inset,
+        .track-overlay {
+            stroke-linecap: round;
+        }
+
+        .track {
+            stroke: #000;
+            stroke-opacity: 0.3;
+            stroke-width: 10px;
+        }
+
+        .track-inset {
+            stroke: #ddd;
+            stroke-width: 8px;
+        }
+
+        .track-overlay {
+            pointer-events: stroke;
+            stroke-width: 50px;
+            stroke: transparent;
+            cursor: crosshair;
+        }
+
+        .handle {
+            fill: #fff;
+            stroke: #000;
+            stroke-opacity: 0.5;
+            stroke-width: 1.25px;
+        }
+
+        #filter {
+            display: flex;
+            align-items: center;
+            margin-top: -5px;
+        }
+        #legend {
+            display: flex;
+            margin-left: 5px;
+        }
+        #allYear,
+        #legend span {
+            padding: 5px;cursor: pointer;
+        }
+
+        select{
+            /* padding: 0px 10px 5px 10px;
+            margin: -4px; */
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            height: 26px;
+            /* border: none;     */
+            /* display: inline-block */
+        }
+
+        #allYear {
+            background: #fff;
+            border-right: 1px solid #000
+        }
+
+        /* .notselect {
+            opacity: 0.;
+        } */
+        .selected {
+            opacity: 1;
+            z-index: 5;
+        }
+
+        .choosing {
+            border: 2px solid #777;
+        }
+    </style>
+</head>
+
+<body id="home">
+    <div id="tooplate_wrapper">
+        <div id="tooplate_header">
+            <div id="tooplate_menu">
+                <ul>
+                    <li><a href="visualisation.html" class="current"><span></span>Visualisation</a></li>
+                    <li><a href="index.html"><span></span>Cleaning</a></li>
+                </ul>
+            </div> <!-- end of tooplate_menu -->
+
+            <div id="site_title">
+                <h1><a href="#">Coursework 1 Of Open Data Innovation</a></h1>
+            </div>
+
+            <div id="tooplate_slider">
+                <div id="filter">
+                    <!-- <select id='fuel1'>
+                        <option value="all">All</option>
+                    </select> -->
+                    <select id="country">
+                        <option value="all">All Country</option>
+                    </select>
+                    <!-- <select id="commision_year">
+                        <option value="all">All</option>
+
+                    </select> -->
+                    <span id="allYear">AllYear</span>
+                    <div id="legend">
+                        <span value="all" style="background:#fff;">All Fuels</span>
+                    </div>
+                </div>
+                <!-- map -->
+                <div id="chart"></div>
+                <div id='slider'></div>
+                <h3>What the visulisation shows?</h3>
+
+                <p>In the visualization, I design a map which can display all kinds of power plants from the world depend on the dataset. There are more than 4,000 data points in this map, we draw all the data points according to the latitude and longitude. The visualization illustrates the distribution of different kinds of power plant station and the development of the power plant. And the filter can help you to understand certain country development, certain fuel development, and distribution. For example, we can find that hydro is the most popular fuel in the world, the main hydro source comes from South Asia and North Europe. And it sources from 1935 in eastern Europe. Meanwhile, we can find that the major power source of UK is wind and solar.
+                </p>
+
+                <h3>How the visualisation is interactive?</h3>
+
+                <p>In the visualisation,the audience can interact with it in a few ways:
+                </p>
+                <ul>
+                    <li><h5>Zoom and Pan</h5>
+                        When the user wants to have a close look at the data points and have a clear view, they can use their scroll wheel to zoom in or zoom out. So that the data points will be fit by appropriate zoom level, and a clear, detailed view will be shown.</li>
+                    <li><h5>Timeline</h5>
+                        There is a timeline slider under the graph, the users can slide the slider to check the development of the power plant.</li>
+                    <li><h5>Filter</h5>
+                        There are 2 kinds of filters on the map. One is for selecting countries, the other one is used for filtering fuel. The user can use the filter to find the detail of the area which they want to learn about. All fuel and all year buttons are used for looking at all the data points in the map. Also, the fuel filter is designed as the legend of the map. So that the audience can have a quick understanding of the data points on the map. When the user clicks on the fuel legend, they can check the distribution of one fuel.</li>
+                    <li><h5>Tooltip</h5>
+                        When the user clicks on the data point, the data point will be enlarged to be highlighted. And the information about the data points will be shown on the map. The information included the name, country, fuel, capacity, owner and source. And it is designed to only show the main fuel in this power plant because the audience only concerns the most important fuel of the power plant.</li>
+                </ul>
+
+                <h3>Who is the intended audience?</h3>
+                <P>The audiences of the map are that the people who are interested in the distribution of the power plant and development of the power plant. The timeline helps them understand the history of the power plant. The people who are doing researches on the major fuel of a country are also the intended audience. They can use the country and fuel filter to understand the main fuel of a country. The power plant developer can use the distribution map to plan the next power plant.
+                </P>
+
+                <h3>Why map is suitable for this data?</h3>
+                <p> Aside from being great visuals that immediately engage audiences, data maps provide critical context for your metrics. Combining geospatial information with data over time creates a greater scope of understanding.
+                    In our data, we have the longitude and latitude of the power plant. So we can have a precise location. And each country has its own power plant, we can draw a map to show the fuel distribution of the different country. Also, there is the commission year in the data. We can use it as a timeline, to show the development of the power plant. Meanwhile, there are 13 different fuel in the data, we can use it as a filter, and make a legend to help the audience to have a quick look. Contextualizing the data in the real world can help audience be more interested in it.
+                </p>
+
+                <h3>Advantages and disadvantages</h3>
+                <p>The map visualisation have a greater ability to more easily understand the distribution of the power plant across the world.The interaction of the map is good, the reader can easily find what they want through the filter.The filter also help the audience easily compare the activity across several locations at a glance. And the timeline give more information for the readers. Also, the color of the data point is well designed, which make reader distinguish different fuel easily.
+                </p>
+                <p>However, because there are too many data points, the map seems narrow. And the map is not innovative as others, which just show the data. Because some of the data do not have the value of commission year, so the timeline only is used for some countries.</p>
+
+                <h3>Reference:</h3>
+                <p>The map template sources from:<a href="https://data.world/makeovermonday/2018w20-hours-spent-in-congestion-in-european-cities">timeline map</a></p>
+                <p>The website templates sources from:<a href="http://www.cssmoban.com/cssthemes/8414.shtml">spotlight template</a></p>
+
+
+            </div>
+        </div>
+    </div>
+    <script src="./js/d3.js"></script>
+    <script src="./js/topojson.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

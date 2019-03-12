@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Spot Light Template</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <!--
+    Template 2051 Spot Light
+    http://www.tooplate.com/view/2051-spot-light
+    -->
+    <link href="css/tooplate_style.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="css/galleriffic-2.css" type="text/css" />
+
+    <script type="text/javascript" src="js/jquery-1.3.2.js"></script>
+    <script type="text/javascript" src="js/jquery.galleriffic.js"></script>
+
+    <script type="text/javascript" src="js/jquery.opacityrollover.js"></script>
+    <!-- We only want the thunbnails to display when javascript is disabled -->
+    <script type="text/javascript">
+        document.write('<style>.noscript { display: none; }</style>');
+    </script>
+
+</head>
+<body id="home">
+<div id="tooplate_wrapper">
+    <div id="tooplate_header">
+        <div id="tooplate_menu">
+            <ul>
+                <li><a href="visualisation.html"><span></span>Visualisation</a></li>
+                <li><a href="index.html"  class="current"><span></span>Cleaning</a></li>
+            </ul>
+        </div> <!-- end of tooplate_menu -->
+
+        <div id="site_title"><h1><a href="#">Coursework 1 Of Open Data Innovation</a></h1></div>
+
+        <!--<div id="tooplate_slider">-->
+                        <article class="entry-post">
+                            <header class="entry-header">
+                                <h1 class="entry-title">Data Cleaning Report</h1>
+                                <h4> By YULIN LI, yl8n18@soton.ac.uk, 30526515</h4>
+                            </header>
+                            <hr>
+                            <class="entry-content">
+
+                                <p><span style="font-size:24px">I</span>n this report, I will introduce the method for cleaning the data. Also, showing the data error and methods, tools which I use to clean the data and errors. In most of the parts, I have tried to use OpenRefine and Excel to accomplish this task. And the screen shots will show some of my operations.
+                                </p>
+
+                                <br>
+                                <h3 class="entry-title">Error 1: Misplaced cells</h3>
+                                <p>There are lots of misplaced cell values in the data. For example, some column of Chile, India are misplacing. Those cells are shifted right need to be fixed. I use Microsoft Excel to fix this error. Select the blank column and delete them. Also, make a choice of shifting cells left when I delete the blank space. Error and operations are shown in figure 1.</p>
+                                <!--Tableau - Top 10 congestion cities in 2017-->
+                                <!--<center><h4>The overall congestion in the UK and economic loss by congestion</h4></center>-->
+                                <center><img alt="misplace" src="./figure/misplacefinal.jpg"  width="500" height="400" /></center>
+                                <center> <p></p><h6>Figure 1: fixing misplaced cells</a></h6><p></p></center>
+
+
+                                <h3 class="entry-title">Error 2: Empty row</h3>
+                                <p>There are some empty rows in the data, I try to use the openRefine to delete these rows.</p>
+                                <p>When we create a project, we can make a choice of not storing the blank rows.</p>
+                                <center><img alt="misplace" src="./figure/blankrowfinal.jpg"  width="500" height="400" /></center>
+                                <center> <p></p><h6>Figure 2: delete blank rows</a></h6><p></p></center>
+
+                                <!--                                  congested                                ---->
+                                <h3 class="entry-title">Error 3: Unrelated rows</h3>
+                                <p>In the data, there are some unrelated rows, like ALL INDA, ALL IRAQ. I try to use openRefine to delete it. </p>
+                                <p>First, we star the offending rows we find. Second, drop down the menu and choose facet by stars. Third, select the true option. Fourth, removing all matching rows.</p>
+                                <center><img alt="misplace" src="./figure/uncofinal.jpg"  width="500" height="400" /></center>
+                                <center> <p></p><h6>Figure 3: delete unrelated rows</a></h6><p></p></center>
+                                <!--the most congested place-->
+
+                                <h3 class="entry-title">Error 4: spelling error</h3>
+                                <p>There is some error in the column fuel name, like solar. There are some words spelling in 'solarr'. I use openRefine to fix these questions.</p>
+                                <p>First, we drop down the menu and make text facet. Second, edit the name 'solarr' and convert it into 'solar'. Then the errors are fixed.</p>
+                                <center><img alt="misplace" src="./figure/fuelfinal.jpg"  width="500" height="400" /></center>
+                                <center> <p></p><h6>Figure 4: spelling error in column 'Fuel1'</a></h6><p></p></center>
+
+                                <br>
+                                <h3 class="entry-title">Error 5: blank column</h3>
+                                <p>In the column 'fuel4', all the value are blank. So we decide to remove this column.</p>
+                                <p>First, we drop down the menu and make text facet to check the value. All the value are blank. Second, we drop down the menu of column 'Fuel4' and remove this column.</p>
+                                <center><img alt="misplace" src="./figure/unwantedfinal.jpg"  width="500" height="400" /></center>
+                                <center> <p></p><h6>Figure 5: delete blank column 'Fuel4'</a></h6><p></p></center>
+
+                                <br>
+                                <h3 class="entry-title">Error 6&7: Country name error</h3>
+                                <p>There are lots of errors in the country name. For example, some of the rows are misplaced like the row  705. Also, there are some spelling errors, like Belgium, UK. There are 4 and 5 different ways to spell Belgium and Uk in this data. Additionally, there is some missing value of row country_long, like JPN, ITA. what is more, some multiple representations are in the data. For example, SA and ZFA are the same country.</p>
+                                <center><img alt="misplace" src="./figure/country.jpg"  width="500" height="600" /></center>
+                                <center> <p></p><h6>Figure 6: Error in 'Country' and 'Country_long'.</a></h6><p></p></center>
+
+                                <p>First，we fix the misplaced cells like fixing error 1. Second, for the spelling and missing value error, we use the text facet filter, to find out what the blank value should be, and then just edit it and apply to all identical cells.</p>
+                                <center><img alt="misplace" src="./figure/solfianl.jpg"  width="500" height="400" /></center>
+                                <center> <p></p><h6>Figure 7: Fixing error in 'country' and 'country_long'</a></h6><p></p></center>
+
+                                <br>
+                                <h3 class="entry-title">Error 8: error in commission_year</h3>
+                                <p>In the column of 'commission_year', there is some input error, like 15123,201.</p>
+                                <p>First, we use the text facet to find out the error row. Then We decide to delete this value and keep it blank. Finally, we drop down the menu and change the cell type into 'date'.</p>
+                                <center><img alt="misplace" src="./figure/yearsol.jpg"  width="500" height="600" /></center>
+                                <center> <p></p><h6>Figure 8: Error in 'commission_year' and change type</a></h6><p></p></center>
+
+                                <br>
+                                <h3 class="entry-title">Error 9: error in estimated_generation_gwh</h3>
+                                <p>When we change the type of column 'estimated_generation_gwh', we can find that there are some characters (gwh) in this column, we need to delete it. and convert it into number type.</p>
+                                <center><img alt="misplace" src="./figure/estfinal.jpg"  width="500" height="400" /></center>
+                                <center> <p></p><h6>Figure 9: Error in 'estimated_generation_gwh'</a></h6><p></p></center>
+
+                                <p>First, we drop down the menu, edit cells and select transform. Put the code: value.replace('(gwh)','') in it. Then all the characters (gwh) are removed.</p>
+                                <center><img alt="misplace" src="./figure/estresult.jpg"  width="500" height="400" /></center>
+                                <center> <p></p><h6>Figure 10: removing the character in 'estimated_generation_gwh'</a></h6><p></p></center>
+
+                                <h3 class="entry-title">Error 10: duplicate row</h3>
+                                <p>In the data, there are some duplicate rows, we can find these rows depend on the 'gppd_idnr' and delete it.</p>
+                                <center><img alt="misplace" src="./figure/id1.png"  width="500" height="400" /></center>
+                                <center> <p></p><h6>Figure 10: duplicate rows error</a></h6><p></p></center>
+
+                                <p>First, we use the text facet filter and sort the elements by count. Then we can find some id are counted for 2 times. We star this row and facet by star. Finally, removing all the matching row.</p>
+                                <center><img alt="misplace" src="./figure/star.jpg"  width="500" height="600" /></center>
+                                <center> <p></p><h6>Figure 11: delete the duplicate rows</a></h6><p></p></center>
+
+                                <h4>The visualisation can be found at <a href="https://yulynn.github.io">https://yulynn.github.io</a></h4>
+                            </div>
+                        </article>
+
+        </div>
+
+
+
+
+</body>
+</html>
